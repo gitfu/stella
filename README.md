@@ -1,7 +1,20 @@
 # stella
 Automated generation of variable segment times  for hls via ffmpeg
 
-## Want the first 10 seconds of hls segments 2 second long, and the rest of the segments 4 seconds long? Try this.
+## Want the first 10 seconds of hls segments 2 second long, 
+## and the rest of the segments 4 seconds long? Try this.
+
+### Usage:
+
+```sh
+python3 stella.py video.file
+```
+
+### Want to tune it a bit ?
+
+Adjust pre_stop and pre_segment_time for the initial segments,
+and reg_segment_time for the rest of the segments in main
+
 
 ```python
 
