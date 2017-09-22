@@ -12,6 +12,33 @@ Try this.
 python3 stella.py video.file
 ```
 
+```
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-TARGETDURATION:5
+#EXTINF:2.035367,
+000.ts
+#EXTINF:2.002000,
+001.ts
+#EXTINF:2.002000,
+002.ts
+#EXTINF:2.002000,
+003.ts
+#EXTINF:2.002000,
+004.ts
+#EXTINF:4.004000,
+005.ts
+#EXTINF:4.004000,
+006.ts
+#EXTINF:4.004000,
+007.ts
+#EXTINF:4.004000,
+008.ts
+#EXT-X-ENDLIST
+```
+
 ### Want to tune it a bit ?
 
 Adjust pre_stop and pre_segment_time for the initial segments,
