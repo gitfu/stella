@@ -12,6 +12,8 @@ Try this.
 python3 stella.py video.file
 ```
 
+makes your index.m3u8 look like this.
+
 ```
 #EXTM3U
 #EXT-X-VERSION:3
