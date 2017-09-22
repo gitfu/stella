@@ -85,7 +85,7 @@ if __name__=='__main__':
 	# first ten seconds get 2 second sgments
 	pre_stop =10
 	pre_segment_time = 2
-  # other segments are 4 seconds
+  	# other segments are 4 seconds
 	reg_segment_time = 4
 
 	segment_times=[]
