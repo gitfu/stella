@@ -8,6 +8,7 @@ redur=re.compile(r'Duration\: (\d{2}:\d{2}:\d{2}\.\d{2})')
 def found_to_seconds(found):
 	hours,mins,secs=found[0].split(':')
 	seconds=float(secs)+(int(mins)*60)+(int(hours)*360)
+	print('media duration ',seconds)
 	return seconds
 
 
@@ -37,7 +38,7 @@ def stringify(alist):
 
 
 def mk_segments(media_file,segment_times,key_frames):
-	args=['ffmpeg','-y','-hide_banner', '-i', media_file, '-map', '0', '-copy_unknown',
+	args=['ffmpeg','-y','-v','0','-hide_banner', '-i', media_file, '-map', '0', '-copy_unknown',
 		'-c', 'copy', '-f', 'segment', '-segment_times',stringify(segment_times),
 		'-force_key_frames', stringify(key_frames), '-segment_list', 'index.m3u8', '%03d.ts']
 	subprocess.call(args)
@@ -48,7 +49,7 @@ if __name__=='__main__':
 	# first ten seconds get 2 second sgments
 	pre_stop =10
 	pre_segment_time = 2
-  # other segments are 4 seconds
+  	# other segments are 4 seconds
 	reg_segment_time = 4
 	segment_times=[]
 	stop = probe_media_for_seconds(media_file)
@@ -59,5 +60,6 @@ if __name__=='__main__':
 	segment_times.pop()
 	# copy segment_times for forced key frames
 	key_frames=segment_times
+	print('segment times set to ',stringify(segment_times))
 	# generate segments and index.m3u8
 	mk_segments(media_file,segment_times,key_frames)
